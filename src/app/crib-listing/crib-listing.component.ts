@@ -28,7 +28,7 @@ export class CribListingComponent implements OnInit {
 
   constructor(
     private cribsService: CribsService,
-    private utilService: UtilService) { }
+    public utilService: UtilService) { }
 
   ngOnInit() {
     this.cribsService.getAllCribs()

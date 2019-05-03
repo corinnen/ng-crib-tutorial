@@ -1,59 +1,53 @@
-<div class="thumbnail">
-  
-      <img src="assets/images/{{ crib.image }}.jpg" alt="crib thumbnail" style="height: 200px">
-  
-    <div class="caption">
-      <div *ngIf="!crib.showDetails">
-        <h4>
-          <span class="label label-primary">
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+    
+        <img src="assets/images/{{ crib.image }}.jpg" alt="crib thumbnail" style="height: 200px">
+    
+      <div class="caption">
+        <div *ngIf="!crib.showDetails">
+          <h4 class="card-title">
             {{ crib.type }}
-          </span>
-        </h4>
-        <h3>
-          <i class="glyphicon glyphicon-tag"></i> 
-            {{ crib.price | currency:'USD':'symbol' }}
-        </h3>
-        <h4>
-          <i class="glyphicon glyphicon-home"></i> 
-            {{ crib.address }}
-        </h4>
-  
-        <hr>
-  
-        <button 
-          class="btn btn-sm btn-success"
-          *ngIf="!crib.showDetails"
-          (click)="crib.showDetails = !crib.showDetails">
-          Details
-        </button>
-  
-      </div>
-  
-      <div *ngIf="crib.showDetails">
-        <div class="details">
-          <h4>
-            <span class="label label-primary">
-              Beds: {{ crib.bedrooms }}
-            </span>
-            <span class="label label-primary">
-              Baths: {{ crib.bathrooms }}
-            </span>
-            <span class="label label-primary">
-              SqFt: {{ crib.area }}
-            </span>
           </h4>
-  
-          <p>{{ crib.description }}</p>
-  
+          <h3>
+              {{ crib.price | currency:'USD':'symbol' }}
+          </h3>
+          <h4>
+              {{ crib.address }}
+          </h4>
+    
           <hr>
-  
-          <button
-            class="btn btn-sm btn-danger"
+    
+          <button 
+            class="btn btn-sm btn-success"
+            *ngIf="!crib.showDetails"
             (click)="crib.showDetails = !crib.showDetails">
-            Close
+            Details
           </button>
-  
+    
+        </div>
+    
+        <div *ngIf="crib.showDetails">
+          <div class="details">
+            <h4>
+                Beds: {{ crib.bedrooms }}
+                Baths: {{ crib.bathrooms }}
+                SqFt: {{ crib.area }}
+            </h4>
+    
+            <p>{{ crib.description }}</p>
+    
+            <hr>
+    
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="crib.showDetails = !crib.showDetails">
+              Close
+            </button>
+    
+          </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
